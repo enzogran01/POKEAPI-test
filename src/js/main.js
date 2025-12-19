@@ -54,5 +54,6 @@ async function buscarPokemon() {
 
 pokemon.addEventListener("input", () => {
     clearTimeout(timeout);
+    exibirSaida(`<span class="italic font-bold">Buscando...</span>`);
     timeout = setTimeout(buscarPokemon, 300);
 });
