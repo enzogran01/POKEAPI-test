@@ -7,7 +7,7 @@ const saida = document.getElementById("pokemonDisplay");
 
 // Funções
 
-const obterPoke = () => pokemon.value;
+const obterPoke = () => pokemon.value.trim();
 
 const exibirSaida = (mensagem) => saida.innerHTML = mensagem;
 
@@ -27,14 +27,15 @@ const gerarCardPoke = ( name, id, sprite) => {
 
 async function buscarPokemon() {
     const pokemon = obterPoke();
+
     let urlPokeAPI = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
 
     try {
         const resposta = await fetch(urlPokeAPI);
 
-        if (!resposta) {
-            throw new Error("Falha na requisição HTTP.");
-        }
+        if (!resposta.ok) {
+           throw new Error("Pokémon inexistente.");
+        }   
 
         const dadosJSON = await resposta.json();
 
@@ -51,6 +52,5 @@ async function buscarPokemon() {
 // Event Listeners
 
 pokemon.addEventListener("input", () => {
-    
     buscarPokemon();
 });
