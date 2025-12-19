@@ -4,6 +4,7 @@
 
 const pokemon = document.getElementById("pokemonSearch");
 const saida = document.getElementById("pokemonDisplay");
+let timeout;
 
 // Funções
 
@@ -52,5 +53,6 @@ async function buscarPokemon() {
 // Event Listeners
 
 pokemon.addEventListener("input", () => {
-    buscarPokemon();
+    clearTimeout(timeout);
+    timeout = setTimeout(buscarPokemon, 300);
 });
