@@ -15,11 +15,18 @@
     </nav>
 
     <section class="flex w-full justify-center items-center mb-8">
-        <input type="search" class="w-[80%] p-4 text-center bg-white rounded-md outline-none" placeholder="ID ou Nome do pokémon" id="pokemonSearch" name="pokemonSearch">
+        <input type="search" class="w-[80%] p-4 text-center bg-white focus:bg-neutral-200 focus:-translate-y-1 focus:scale-110 md:focus:scale-100 transition-all duration-200 rounded-md outline-none" placeholder="ID ou Nome do pokémon" id="pokemonSearch" name="pokemonSearch">
     </section>
 
     <section id="pokemonDisplay" class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4 place-items-center-safe">
         <span class="italic font-bold">Faça sua primeira pesquisa!</span>
     </section>
+
+    <!-- MOLDE BASE DE CARD -->
+    <!-- <div class="flex flex-col bg-white hover:bg-neutral-100 hover:-translate-y-1 transition-all duration-200 p-3 rounded-xl w-full max-w-75 cursor-pointe">
+        <img src="src/imgs/ditto-test.png" alt="ditto" class="w-2xs">
+        <span class="font-bold text-2xl">Ditto</span>
+        <span>N° 0132</span>
+    </div> -->
 </body>
 </html>

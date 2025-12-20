@@ -18,8 +18,8 @@ const capitalize = (str = "") => str.charAt(0).toUpperCase() + str.slice(1);
 
 const gerarCardPoke = ( name, id, sprite) => {
     return `
-        <div class="flex flex-col bg-white p-3 rounded-xl w-full max-w-75">
-            <img src="${sprite}" alt="${capitalize(name)}" class="w-2xs">
+        <div class="flex flex-col bg-white hover:bg-neutral-100 hover:-translate-y-1 transition-all duration-200 p-3 rounded-xl w-full max-w-75 cursor-pointe">
+            <img src="${sprite}" alt="${name} sprite" class="w-2xs">
             <span class="font-bold text-2xl">${capitalize(name)}</span>
             <span>N° ${zeroAEsquerda(id)}</span>
         </div>
@@ -55,5 +55,5 @@ async function buscarPokemon() {
 pokemon.addEventListener("input", () => {
     clearTimeout(timeout);
     exibirSaida(`<span class="italic font-bold">Buscando...</span>`);
-    timeout = setTimeout(buscarPokemon, 300);
+    timeout = setTimeout(buscarPokemon, 1000);
 });
